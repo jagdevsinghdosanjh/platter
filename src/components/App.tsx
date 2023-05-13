@@ -1,11 +1,19 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
 import NavigationMenu from './NavigationMenu';
+import Home from './Home';
+import About from './About'; 
+import imageUrls from '../data/image-sources';
 
-const App=()=>{
+const App = () => {
     return (
         <>
-        <NavigationMenu/>
-        <div>Hello World!</div>  
+            <NavigationMenu />
+            <Container>
+                {/* <div>Hello</div> */}
+                {/* <Home/> */}
+                <About imageUrls={imageUrls} />
+            </Container>
         </>
     );
 };
