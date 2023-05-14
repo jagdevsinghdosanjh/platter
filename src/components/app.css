@@ -1,0 +1,16 @@
+.text-xs{
+    font-size:0.65rem;
+}
+
+.text-sm{
+    font-size: 0.85rem;
+}
+.text-lg{
+    font-size: large;
+}
+.text-xlg{
+    font-size:x-large;
+}
+.text-xxlg{
+    font-size:xx-large;
+}

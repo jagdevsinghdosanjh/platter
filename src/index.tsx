@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './components/app.css';
 
 
 ReactDOM.render(
