@@ -9,6 +9,7 @@ import Rating from './common/Rating';
 import RestaurantsList from './restaurants-lists/RestaurantsList';
 import RestaurantsListItem from './restaurants-lists/RestaurantsListItem';
 import IRestaurant from '../models/IRestaurant';
+import RestaurantDetails from './restaurant-details/RestaurantDetails';
 
 const restaurant :IRestaurant = {
     "id": 1,
@@ -36,9 +37,10 @@ const App = () => {
                 {/* <Home/> */}
                 {/* <About imageUrls={imageUrls} /> */}
                 {/* <LoadingIndicator size="large" message="The restaurants are being fetched. Please wait..."/> */}
-                // <Rating value={2.7} className="me-2" />
+                {/* <Rating value={2.7} className="me-2" /> */}
                 {/* <RestaurantsListItem restaurant={restaurant} /> */}
-                <RestaurantsList />
+                {/* <RestaurantsList /> */}
+                <RestaurantDetails />
             </Container>
         </>
     );

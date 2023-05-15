@@ -4,10 +4,9 @@ import IRestaurant from '../../models/IRestaurant';
 import RestaurantsListItem from './RestaurantsListItem';
 import { LoadingStatus } from '../../models/types';
 import LoadingIndicator from '../common/LoadingIndicator';
-// import { Alert } from 'react-bootstrap';
 
 type Props = {
-    // restaurants: IRestaurant[]
+    
 };
 
 type State = {
@@ -108,7 +107,7 @@ class RestaurantsList extends Component<Props, State>{
                         {
                             restaurants?.map(
                                 restaurant=>(
-                                    <Col key={restaurant.id}>
+                                    <Col key={restaurant.id} className="d-flex align-items-stretch my-3">
                                         <RestaurantsListItem
                                         restaurant={restaurant}
                                         />
@@ -132,8 +131,17 @@ class RestaurantsList extends Component<Props, State>{
         return el;
     }
     componentDidMount() {
-        
+        setTimeout(()=>
+        {
+        //     this.setState({
+        //         status:'LOADED',
+        //         restaurants
+        //    });
+        this.setState({
+            status:'ERROR_LOADING',
+            error:new Error('Some Error')
+       });
+        }, 3000);
     }
-
 }
 export default RestaurantsList;
