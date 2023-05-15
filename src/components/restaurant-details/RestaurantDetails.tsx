@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Row, Col, Alert } from 'react-bootstrap';
+import { Row, Col, Alert,Badge } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faClock} from '@fortawesome/free-solid-svg-icons';
 import IRestaurant from '../../models/IRestaurant';
 import { LoadingStatus } from '../../models/types';
 import LoadingIndicator from '../common/LoadingIndicator';
+import Rating from '../common/Rating';
 
 type Props = {
 
@@ -60,13 +63,45 @@ const RestaurantDetails = (props: Props) => {
             }=restaurant as IRestaurant;
             el = (
                 <Row>
+                    <Col xs={12} >
+                        <h3>{name}</h3>
+                    </Col>
                     <Col xs={12} lg={4}>
                         <img 
                             src={`${process.env.REACT_APP_API_BASE_URL}${imageUrl}`}
                             alt={name} className="w-100"/>
                     </Col>
                     <Col xs={12} lg={8}>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium quis ratione obcaecati. Et ad labore quis delectus, non id aliquam beatae fugit dicta quo quia fuga. Mollitia laboriosam accusamus porro.
+                        <div>
+                            {
+                            cuisines.map(
+                                cuisine =>(
+                                    <Badge 
+                                        bg="primary me-2"
+                                        key={cuisine}
+                                    >
+                                        {cuisine}
+                                    </Badge>
+                                )
+                            )
+                        }
+                        </div>
+                        <div className="fs-5 my-2">
+                            {description}
+                        </div>
+                        <Row xs={3} className="text-sm">
+                            <Col>
+                                <FontAwesomeIcon icon={faClock} />
+                                <span>{opens}-{closes}</span>
+                            </Col>
+                            <Col>
+                                <Rating value={rating}className="me-2" />
+                                {rating} ({numRatings} ratings)
+                            </Col>
+                            <Col>
+                                Cost for two:Rs. {costForTwo}
+                            </Col>
+                        </Row>
                     </Col>
                 </Row>
             );
