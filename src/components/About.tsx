@@ -1,7 +1,7 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faLink, faCode } from '@fortawesome/free-solid-svg-icons';
-
+import ImageSource from '../models/ImageSource';
 type Props = {
     imageUrls: string[]
 };
